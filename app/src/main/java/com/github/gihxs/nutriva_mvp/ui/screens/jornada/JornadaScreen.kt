@@ -18,7 +18,9 @@ import com.github.gihxs.nutriva_mvp.ui.theme.NutrivaTextSecondary
 @Composable
 fun JornadaScreen(navController: NavHostController) {
     Scaffold(topBar = { NutrivaTopBar(navController = navController, titulo = "A jornada da doação") }) { padding ->
-        Column(Modifier.padding(padding).padding(16.dp)) {
+        Column(Modifier
+            .padding(padding)
+            .padding(16.dp)) {
             Text("Doação em apenas quatro passos.", fontWeight = FontWeight.Bold)
             Spacer(Modifier.height(4.dp))
             Text(
@@ -32,6 +34,11 @@ fun JornadaScreen(navController: NavHostController) {
                         etapa = etapa,
                         onIniciarTriagem = if (etapa.possuiBotaoTriagem) {
                             { navController.navigate(NutrivaScreen.TriagemForm.route) }
+                        } else null,
+                        onEncontrarPostos = if (etapa.numero == 2) {
+                            {
+                                navController.navigate(NutrivaScreen.PostosList.route)
+                            }
                         } else null
                     )
                 }

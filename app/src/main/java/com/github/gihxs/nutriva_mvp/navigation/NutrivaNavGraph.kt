@@ -6,6 +6,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.github.gihxs.nutriva_mvp.ui.screens.duvidas.DuvidasScreen
 import com.github.gihxs.nutriva_mvp.ui.screens.faq.FaqScreen
 import com.github.gihxs.nutriva_mvp.ui.screens.home.HomeScreen
 import com.github.gihxs.nutriva_mvp.ui.screens.jornada.JornadaScreen
@@ -54,6 +55,14 @@ fun NutrivaNavGraph() {
 
         composable(NutrivaScreen.Faq.route) {
             FaqScreen(navController = navController)
+        }
+
+        composable(NutrivaScreen.Faq.route) {
+            FaqScreen(navController = navController)
+        }
+
+        composable(NutrivaScreen.Duvidas.route) {
+            DuvidasScreen(navController = navController)
         }
     }
 }

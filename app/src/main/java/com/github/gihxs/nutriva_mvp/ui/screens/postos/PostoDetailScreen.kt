@@ -28,6 +28,7 @@ fun PostoDetailScreen(postoId: Int, navController: NavHostController, viewModel:
                 Text(posto.tipo)
                 Spacer(Modifier.height(16.dp))
                 Text("Endereço: ${posto.endereco}")
+                Text("Telefone: ${posto.telefone}")
                 Text("Horário: ${posto.horario}")
                 Text("Distância: ${posto.distanciaKm} km")
                 Spacer(Modifier.height(32.dp))

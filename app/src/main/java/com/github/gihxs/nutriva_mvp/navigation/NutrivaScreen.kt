@@ -12,4 +12,5 @@ sealed class NutrivaScreen(val route: String) {
         fun createRoute(resultado: String) = "triagem/resultado/$resultado"
     }
     object Faq : NutrivaScreen("faq")
+    object Duvidas : NutrivaScreen("duvidas")
 }

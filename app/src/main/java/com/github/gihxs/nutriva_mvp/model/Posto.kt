@@ -6,5 +6,6 @@ data class Posto(
     val tipo: String,
     val endereco: String,
     val horario: String,
-    val distanciaKm: Double
+    val distanciaKm: Double,
+    val telefone: String
 )

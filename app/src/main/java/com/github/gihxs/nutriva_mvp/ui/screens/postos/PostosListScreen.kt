@@ -9,6 +9,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import com.github.gihxs.nutriva_mvp.navigation.NutrivaScreen
+import com.github.gihxs.nutriva_mvp.ui.components.DuvidasCard
 import com.github.gihxs.nutriva_mvp.ui.components.NutrivaTopBar
 import com.github.gihxs.nutriva_mvp.ui.components.PostoCard
 import com.github.gihxs.nutriva_mvp.viewmodel.PostosViewModel
@@ -34,6 +35,13 @@ fun PostosListScreen(navController: NavHostController, viewModel: PostosViewMode
                     PostoCard(posto = posto) {
                         navController.navigate(NutrivaScreen.PostoDetail.createRoute(posto.id))
                     }
+                }
+                item {
+                    DuvidasCard(
+                        onClick = {
+                            navController.navigate(NutrivaScreen.Duvidas.route)
+                        }
+                    )
                 }
             }
         }
