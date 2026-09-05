@@ -12,7 +12,7 @@ import com.github.gihxs.nutriva_mvp.ui.theme.NutrivaTeal
 import com.github.gihxs.nutriva_mvp.ui.theme.NutrivaTextSecondary
 
 @Composable
-fun EtapaJornadaCard(etapa: EtapaJornada, onIniciarTriagem: (() -> Unit)? = null) {
+fun EtapaJornadaCard(etapa: EtapaJornada, onIniciarTriagem: (() -> Unit)? = null, onEncontrarPostos: (() -> Unit)? = null) {
     Card(modifier = Modifier.fillMaxWidth()) {
         Column(Modifier.padding(16.dp)) {
             Text("0${etapa.numero}", color = NutrivaTeal, fontWeight = FontWeight.Bold)
@@ -24,6 +24,10 @@ fun EtapaJornadaCard(etapa: EtapaJornada, onIniciarTriagem: (() -> Unit)? = null
             if (etapa.possuiBotaoTriagem && onIniciarTriagem != null) {
                 Spacer(Modifier.height(12.dp))
                 PrimaryButton("Iniciar triagem", onClick = onIniciarTriagem)
+            }
+            if (etapa.numero == 2 && onEncontrarPostos != null) {
+                Spacer(Modifier.height(12.dp))
+                PrimaryButton("Encontrar postos", onClick = onEncontrarPostos)
             }
         }
     }
