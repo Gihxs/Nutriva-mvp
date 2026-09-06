@@ -58,10 +58,6 @@ fun NutrivaNavGraph() {
             FaqScreen(navController = navController)
         }
 
-        composable(NutrivaScreen.Faq.route) {
-            FaqScreen(navController = navController)
-        }
-
         composable(NutrivaScreen.Duvidas.route) {
             DuvidasScreen(navController = navController)
         }
