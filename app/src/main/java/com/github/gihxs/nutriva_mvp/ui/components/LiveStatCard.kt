@@ -13,16 +13,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.github.gihxs.nutriva_mvp.ui.theme.NutrivaCardBackground
 import com.github.gihxs.nutriva_mvp.ui.theme.NutrivaDarkBlue
 import com.github.gihxs.nutriva_mvp.ui.theme.NutrivaTeal
-import com.github.gihxs.nutriva_mvp.ui.theme.NutrivaTealLight
 import com.github.gihxs.nutriva_mvp.ui.theme.NutrivaTextSecondary
 
 @Composable
 fun LiveStatCard(valor: String) {
     Card(
         modifier = Modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(containerColor = NutrivaTealLight)
+        colors = CardDefaults.cardColors(containerColor = NutrivaCardBackground)
     ) {
         Row(
             modifier = Modifier.padding(12.dp),

@@ -13,7 +13,7 @@ object FaqMock {
         FaqItem(4, "Quanto preciso doar?",
             "Não existe quantidade mínima obrigatória. Qualquer volume excedente já ajuda bebês prematuros internados."),
         FaqItem(5, "Não encontrou sua dúvida?",
-            "Entre em contato conosco pelo e-mail contato@nutriva.com.br ou pelo telefone (11) 11111-1111.")
+            "Entre em contato conosco pelo e-mail: contato@nutriva.com.br ou pelo telefone: (11) 11111-1111.")
 
     )
 }

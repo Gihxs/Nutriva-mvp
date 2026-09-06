@@ -18,7 +18,9 @@ private val NutrivaColorScheme = lightColorScheme(
     outline = NutrivaOutline,
     outlineVariant = NutrivaOutlineVariant,
     error = NutrivaError,
-    onError = NutrivaCardBackground
+    onError = NutrivaCardBackground,
+    surfaceContainerHighest = NutrivaCardBackground
+
 )
 
 @Composable

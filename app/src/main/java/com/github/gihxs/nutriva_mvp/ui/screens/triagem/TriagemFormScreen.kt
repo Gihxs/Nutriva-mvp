@@ -10,6 +10,10 @@ import androidx.navigation.NavHostController
 import com.github.gihxs.nutriva_mvp.ui.components.PrimaryButton
 import com.github.gihxs.nutriva_mvp.navigation.NutrivaScreen
 import com.github.gihxs.nutriva_mvp.ui.components.NutrivaTopBar
+import com.github.gihxs.nutriva_mvp.ui.theme.NutrivaBackground
+import com.github.gihxs.nutriva_mvp.ui.theme.NutrivaCardBackground
+import com.github.gihxs.nutriva_mvp.ui.theme.NutrivaDarkBlue
+import com.github.gihxs.nutriva_mvp.ui.theme.NutrivaTeal
 import com.github.gihxs.nutriva_mvp.viewmodel.TriagemViewModel
 
 @Composable
@@ -27,13 +31,25 @@ fun TriagemFormScreen(
                     FilterChip(
                         selected = respostas[pergunta.id] == true,
                         onClick = { viewModel.responder(pergunta.id, true) },
-                        label = { Text("Sim") }
+                        label = { Text("Sim") },
+                        colors = FilterChipDefaults.filterChipColors(
+                            containerColor = NutrivaCardBackground,
+                            labelColor = NutrivaDarkBlue,
+                            selectedContainerColor = NutrivaTeal,
+                            selectedLabelColor = NutrivaBackground
+                     )
                     )
                     Spacer(Modifier.width(8.dp))
                     FilterChip(
                         selected = respostas[pergunta.id] == false,
                         onClick = { viewModel.responder(pergunta.id, false) },
-                        label = { Text("Não") }
+                        label = { Text("Não") },
+                        colors = FilterChipDefaults.filterChipColors(
+                            containerColor = NutrivaCardBackground,
+                            labelColor = NutrivaDarkBlue,
+                            selectedContainerColor = NutrivaTeal,
+                            selectedLabelColor = NutrivaBackground
+                     )
                     )
                 }
                 Spacer(Modifier.height(8.dp))
