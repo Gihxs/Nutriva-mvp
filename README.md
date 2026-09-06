@@ -274,5 +274,7 @@ Inicie um emulador Android ou conecte um dispositivo físico com a depuração U
 
 Depois, selecione o dispositivo no Android Studio e execute o projeto utilizando a opção Run.
 
+> **Observação:** o emulador requer virtualização de hardware habilitada na BIOS. 
+> Também é possível executar em um dispositivo físico via depuração USB.
 ---
 
