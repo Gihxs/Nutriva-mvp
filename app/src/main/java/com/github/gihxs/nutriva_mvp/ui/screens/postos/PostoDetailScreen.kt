@@ -16,8 +16,6 @@ import com.github.gihxs.nutriva_mvp.viewmodel.PostosViewModel
 @Composable
 fun PostoDetailScreen(postoId: Int, navController: NavHostController, viewModel: PostosViewModel = viewModel()) {
     val posto = viewModel.buscarPorId(postoId)
-    var mostrarConfirmacao by remember { mutableStateOf(false) }
-
     Scaffold(topBar = { NutrivaTopBar(navController = navController, titulo = "Detalhes do posto") }) { padding ->
         Column(Modifier.padding(padding).padding(24.dp)) {
             if (posto == null) {
@@ -41,30 +39,5 @@ fun PostoDetailScreen(postoId: Int, navController: NavHostController, viewModel:
                 )
             }
         }
-    }
-
-    if (mostrarConfirmacao && posto != null) {
-        AlertDialog(
-            onDismissRequest = { mostrarConfirmacao = false },
-            title = { Text("Agendamento confirmado!") },
-            text = {
-                Text("Sua doação foi agendada em ${posto.nome}. Compareça no horário de funcionamento (${posto.horario}) com o leite já higienizado.")
-            },
-            confirmButton = {
-                TextButton(onClick = {
-                    mostrarConfirmacao = false
-                    navController.navigate(NutrivaScreen.Home.route) {
-                        popUpTo(NutrivaScreen.Home.route) { inclusive = true }
-                    }
-                }) {
-                    Text("Voltar para o início")
-                }
-            },
-            dismissButton = {
-                TextButton(onClick = { mostrarConfirmacao = false }) {
-                    Text("Fechar")
-                }
-            }
-        )
     }
 }
