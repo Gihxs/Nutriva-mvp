@@ -14,6 +14,7 @@ import com.github.gihxs.nutriva_mvp.ui.screens.postos.PostoDetailScreen
 import com.github.gihxs.nutriva_mvp.ui.screens.postos.PostosListScreen
 import com.github.gihxs.nutriva_mvp.ui.screens.triagem.TriagemFormScreen
 import com.github.gihxs.nutriva_mvp.ui.screens.triagem.TriagemResultadoScreen
+import com.github.gihxs.nutriva_mvp.ui.screens.agendamento.AgendamentoScreen
 
 @Composable
 fun NutrivaNavGraph() {
@@ -63,6 +64,17 @@ fun NutrivaNavGraph() {
 
         composable(NutrivaScreen.Duvidas.route) {
             DuvidasScreen(navController = navController)
+        }
+
+        composable(
+            route = NutrivaScreen.Agendamento.route,
+            arguments = listOf(navArgument("postoId") { type = NavType.IntType })
+        ) { backStackEntry ->
+            val postoId = backStackEntry.arguments?.getInt("postoId") ?: -1
+            AgendamentoScreen(
+                postoId = postoId,
+                navController = navController
+            )
         }
     }
 }

@@ -13,4 +13,8 @@ sealed class NutrivaScreen(val route: String) {
     }
     object Faq : NutrivaScreen("faq")
     object Duvidas : NutrivaScreen("duvidas")
+
+    object Agendamento : NutrivaScreen("agendamento/{postoId}") {
+        fun createRoute(postoId: Int) = "agendamento/$postoId"
+    }
 }

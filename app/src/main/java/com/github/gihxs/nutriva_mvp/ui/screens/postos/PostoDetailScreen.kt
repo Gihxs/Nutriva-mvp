@@ -32,9 +32,11 @@ fun PostoDetailScreen(postoId: Int, navController: NavHostController, viewModel:
                 Text("Horário: ${posto.horario}")
                 Text("Distância: ${posto.distanciaKm} km")
                 Spacer(Modifier.height(32.dp))
-                PrimaryButton(texto = "Confirmar agendamento neste posto",
+                PrimaryButton(texto = "Agendar neste posto",
                     onClick =  {
-                    mostrarConfirmacao = true
+                        navController.navigate(
+                            NutrivaScreen.Agendamento.createRoute(posto.id)
+                        )
                  }
                 )
             }

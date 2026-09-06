@@ -12,12 +12,13 @@ import androidx.compose.ui.unit.dp
 import com.github.gihxs.nutriva_mvp.ui.theme.NutrivaDarkBlue
 
 @Composable
-fun PrimaryButton(texto: String, onClick: () -> Unit, modifier: Modifier = Modifier) {
+fun PrimaryButton(texto: String, onClick: () -> Unit, modifier: Modifier = Modifier,enabled: Boolean = true) {
     Button(
         onClick = onClick,
         modifier = modifier.fillMaxWidth().height(52.dp),
         shape = RoundedCornerShape(14.dp),
-        colors = ButtonDefaults.buttonColors(containerColor = NutrivaDarkBlue)
+        colors = ButtonDefaults.buttonColors(containerColor = NutrivaDarkBlue),
+        enabled = enabled
     ) {
         Text(texto)
     }
